@@ -355,11 +355,9 @@ aside.fixed-aside {
 
 .new-wrapper {
     width: 92%;
-    /* background-color: #fff; */
     margin: 20px auto;
     box-sizing: border-box;
     border-radius: 5px;
-    /* box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, .3); */
 }
 
 .new-wrapper h2 {
