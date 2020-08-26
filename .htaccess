@@ -1,0 +1,22 @@
+RewriteEngine On
+
+Options -Indexes
+
+# Uzantı Kaldırma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteRule ^yazilar/([0-9a-zA-Z-_]+)$ page.php?yazi_seolink=$1 [NC,NE,L]
+RewriteRule ^kategori/([0-9a-zA-Z-_]+)$ category.php?kategori_url=$1 [NC,NE,L]
+RewriteRule ^anasayfa$ index.php [NC,L]
+RewriteRule ^iletisim$ contact.php [NC,L]
+RewriteRule ^hakkimizda$ about-us.php [NC,L]
+
+# Sayfalama
+RewriteRule ^sayfa/(.*)$ index.php?sayfa=$1
+RewriteRule ^kategori/(.*)/sayfa/(.*)$ category.php?kategori_url=$1&sayfa=$2 [NC,NE,L]
+RewriteRule ^arama/(.*)/sayfa/(.*)$ search.php?ara=$1&sayfa=$2 [NC,NE,L]
+
+# Error 404
+ErrorDocument 404 http://localhost/rablogintheme/404

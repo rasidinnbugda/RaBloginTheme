@@ -1,3 +1,4 @@
+<?php include 'sistem/connect.php'; ?>
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -9,6 +10,7 @@
     <meta name="robots" content="index, follow" />
     <meta name="description" content="description example">
     <meta name="keywords" content="keywords example">
+    <base href="http://localhost/rablogintheme/">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/cd25521a32.js" crossorigin="anonymous"></script>
     <link rel="icon" href="img/favicon.ico">
@@ -20,20 +22,7 @@
 
 <body>
     <!-- Header -->
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="img/RaBlogin.png" alt="RaBlogin" title="RaBlogin" width="80" height="80"></a>
-        </div>
-        <div class="menu-toggle"></div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="cool-link">Anasayfa</a></li>
-                <li><a href="#" class="cool-link">İletişim</a></li>
-                <li><a href="#" class="cool-link">Hakkımda</a></li>
-            </ul>
-        </nav>
-        <div class="clearfix"></div>
-    </header>
+    <?php include 'header.php'; ?>
     <!-- Header end -->
 
     <!-- Page Wrapper -->
@@ -42,7 +31,7 @@
             <main>
                 <!-- New Post -->
                 <div class="new-wrapper">
-                    <h2>"Domain" Sorgusunda Bulunan Sonuçlar</h2>
+                    <h2>"Kategori 1" Kategorisinde Bulunan Yazılar</h2>
 
 
                     <div class="grid">
@@ -55,7 +44,7 @@
                                 <p>
                                     <b><i class="fas fa-user"></i></b> Raşidin Buğda &nbsp; <b><i class="far fa-calendar-alt"></i></b> 17.08.2020<br>
                                     <b><i class="fas fa-eye"></i></b> 14<br>
-                                    <a href="#" title="" class="c-item"><i class="fas fa-list"></i> Kategori 1</a>
+                                    <a href="kategori/<?php echo $row["kategori_url"]; ?>" title="<?php echo $row["kategori_title"]; ?>" class="c-item"><i class="fas fa-list"></i> <?php echo $row["kategori_title"]; ?></a>
                                 </p>
                                 <a href="page.html" class="read-me" title="">Gönderiyi Oku <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
                             </div>
@@ -149,58 +138,12 @@
             </main>
 
             <!-- aside -->
-            <aside>
-                <section class="search">
-                    <span class="section-title"><i class="fas fa-search"></i> Arama Yap</span>
-                    <center>
-                        <form action="search.html" method="post">
-                            <input type="search" name="" placeholder="Arama Yap">
-                            <button type="search" class="searchbutton">Arama Yap</button>
-                        </form>
-                    </center>
-                </section>
-
-                <section class="topics">
-                    <span class="section-title">Kategoriler</span>
-                    <ul>
-                        <li><a href="#">Kategori 1</a></li>
-                        <li><a href="#">Kategori 2</a></li>
-                        <li><a href="#">Kategori 3</a></li>
-                        <li><a href="#">Kategori 4</a></li>
-                        <li><a href="#">Kategori 5</a></li>
-                    </ul>
-                </section>
-            </aside>
-
-            <aside class="fixed-aside">
-                <section class="social-media">
-                    <span class="section-title">Sosyal Medya</span>
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook-square" style="color: #4064AD;"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-instagram-square" style="color: #CF3E87;"></i> İnstagram</a></li>
-                        <li><a href="#"><i class="fab fa-twitter-square" style="color: #1DA1F2;"></i> Twitter</a></li>
-                        <li><a href="#"><i class="fab fa-youtube" style="color: #FB0009;"></i> YouTube</a></li>
-                    </ul>
-                </section>
-            </aside>
+            <?php include 'sidebar.php'; ?>
             <!-- Aside end -->
             <div class="clearfix"></div>
         </div>
         <!-- Footer -->
-        <footer>
-            <div class="footer-up">
-                <h1>RaBlogin</h1>
-                <p>RaBlogin ile web sitesi hakkında bilgiler ve blog hakkında birçok şeyi öğrenmeniz mümkün. Web tasarım hakkında bilgiler. Siteye bekliyoruz.</p>
-
-                <a href="#">Gizlilik Politikası</a>
-                <a href="#">Hakkımda</a>
-                <a href="#">İletişim</a>
-
-            </div>
-            <div class="footer-lower">
-                Copyright &copy; 2020 | <a href="#">rablogin.com</a> Tüm hakları saklıdır.
-            </div>
-        </footer>
+        <?php include 'footer.php'; ?>
         <!-- Footer end -->
 
     </div>
